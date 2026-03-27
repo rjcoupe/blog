@@ -1,0 +1,205 @@
+/* ============================================================
+   False Flag — Theme overrides
+   Palette: Pewter (#90A8B8) + Steel Teal (#5BA3C0)
+   ============================================================ */
+
+
+/* ─── TYPOGRAPHY ─────────────────────────────────────────── */
+
+/* Monospace headings: the single biggest departure from stock
+   jekyll-dash. Roboto Mono is already loaded by the theme, so
+   no extra network request. Technical, precise, document-like —
+   feels closer to a structured report than a dev blog. */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Roboto Mono", monospace;
+  font-weight: 400;
+  color: #90A8B8;
+  letter-spacing: 0.03em;
+}
+
+/* Site title gets the same monospace treatment.
+   Slightly reduced size keeps it from competing with content. */
+.site-title,
+.site-title:visited,
+.site-title:hover {
+  font-family: "Roboto Mono", monospace;
+  font-size: 20px;
+  letter-spacing: 0.06em;
+}
+
+/* Post titles in the listing — de-facto headings, styled as such */
+.post-link-wrapper > .post-link {
+  font-family: "Roboto Mono", monospace;
+  font-size: 17px !important;
+  color: #A8C4D4;
+}
+.post-link-wrapper > .post-link:hover {
+  color: #DAE4ED;
+  text-decoration: none;
+}
+
+/* Section label on the listing page ("recent articles" h1).
+   Reduce it to a small uppercase stamp rather than a banner. */
+.page-content > .wrapper > h1,
+.page-content > .wrapper > h2 {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: rgba(144, 168, 184, 0.5);
+  margin-top: 2.5em;
+  margin-bottom: 1.4em;
+  border-bottom: none;
+}
+
+/* Wider line-height for reading dense technical prose */
+body {
+  line-height: 1.72;
+}
+
+/* Timestamps: monospace, faint pewter — all dates feel like
+   file metadata rather than decorative publishing info */
+.post .post-date {
+  font-family: "Roboto Mono", monospace;
+  font-size: 11px !important;
+  letter-spacing: 0.05em;
+  color: rgba(144, 168, 184, 0.5) !important;
+  margin-top: 0.4em;
+}
+.theme--dark .post-link-wrapper > .post-meta,
+.theme--light .post-link-wrapper > .post-meta {
+  font-family: "Roboto Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  color: rgba(144, 168, 184, 0.5) !important;
+}
+
+
+/* ─── COLOUR PALETTE ──────────────────────────────────────── */
+
+a { color: #5BA3C0; }
+.theme--dark a:hover { color: #DAE4ED; }
+.theme--light a:hover { color: #1E2227; }
+
+.theme--dark .post-title { color: #A8C4D4; }
+.theme--light .post-title { color: #2A5878; }
+
+.site-header .command_prompt { color: #90A8B8; }
+.post-description:before { color: #90A8B8; }
+
+.theme--dark .social_links > a { color: #8AABBD; }
+
+.tag, .tag-cloud > a { color: #5BA3C0; }
+.tag:hover, .tag-cloud > a:hover { color: #8ECAE0 !important; }
+
+.pagination > a { color: #5BA3C0; }
+.pagination > a:hover { color: #8ECAE0; }
+
+ul.related-posts > li:before { color: #90A8B8; }
+
+/* Blockquotes: a slightly lighter, cooler tone to lift them
+   from the body text without introducing a new hue */
+.theme--dark .post > blockquote { color: #B0C8D8; }
+.theme--light .post > blockquote { color: #284A68; }
+.theme--dark .post > blockquote li { color: #B0C8D8; }
+.theme--light .post > blockquote li { color: #284A68; }
+
+
+/* ─── STRUCTURAL ─────────────────────────────────────────── */
+
+/* Header: hairline at the bottom separates it cleanly
+   from content without adding visual weight */
+.site-header {
+  border-bottom: 1px solid rgba(144, 168, 184, 0.22);
+  margin-bottom: 2.2em;
+}
+
+/* Post listing entries: a left-border appears on hover,
+   giving entries the feel of an agenda item being selected */
+.post-link-wrapper {
+  border-left: 2px solid transparent;
+  padding-left: 0.9em;
+  transition: border-color 0.12s ease;
+  margin-bottom: 1.4em;
+}
+.post-link-wrapper:hover {
+  border-left-color: rgba(144, 168, 184, 0.5);
+}
+
+/* h2 section dividers in posts */
+.post h2 {
+  border-bottom: 1px solid rgba(144, 168, 184, 0.13);
+  padding-bottom: 0.25em;
+}
+
+/* Blockquotes: remove the large float-left quote icon entirely;
+   replace with a left rule. This looks like a pulled source
+   excerpt in a brief rather than a styled pullquote. */
+.post > blockquote:before {
+  display: none;
+}
+.post > blockquote {
+  border-left: 3px solid rgba(144, 168, 184, 0.5);
+  padding-left: 1.2em;
+  margin-left: 0;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  font-style: normal;
+}
+.post > blockquote > p {
+  display: block;
+  padding-left: 0;
+}
+
+/* List bullets: swap checkmarks for thin chevrons in faint pewter.
+   Checkmarks imply completion; chevrons imply enumeration.
+   The font-family is already set by the theme's :before rule —
+   only content and color need overriding here. */
+.post ul > li {
+  color: #90B892;
+}
+.theme--light .post ul > li {
+  color: #4A7A58;
+}
+.post ul > li:before {
+  content: "\f105";
+  color: rgba(144, 168, 184, 0.55);
+}
+
+/* Code blocks: fractionally darker background + pewter left border.
+   Square left edge, rounded right — reads as a block starting
+   from the document edge rather than floating in space. */
+.theme--dark pre {
+  background-color: #111318;
+  border-left: 3px solid rgba(144, 168, 184, 0.4);
+  border-radius: 0 0.3em 0.3em 0;
+  padding-left: 1.1em;
+}
+
+/* Author box on home page: a left rule ties it into the same
+   visual language as blockquotes and code blocks */
+.author-box {
+  border-left: 2px solid rgba(144, 168, 184, 0.18);
+  padding-left: 1em;
+  font-style: normal;
+  opacity: 0.8;
+}
+
+
+/* ─── FINISH ─────────────────────────────────────────────── */
+
+/* Text selection */
+::selection {
+  background-color: rgba(91, 163, 192, 0.22);
+  color: inherit;
+}
+
+/* Scrollbar (Webkit) */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #15171A; }
+::-webkit-scrollbar-thumb {
+  background: rgba(144, 168, 184, 0.3);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(144, 168, 184, 0.55);
+}
