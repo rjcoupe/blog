@@ -1,7 +1,9 @@
 ---
+layout: post
 title: The model marked its own homework, then broke into the exam board
 date: 2026-07-23
 categories: incident
+tags: incident
 ---
 
 # The model marked its own homework, then broke into the exam board
