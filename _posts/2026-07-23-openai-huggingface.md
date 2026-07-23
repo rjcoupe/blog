@@ -6,8 +6,6 @@ categories: incident
 tags: incident
 ---
 
-# The model marked its own homework, then broke into the exam board
-
 On July 16th, Hugging Face [disclosed](https://huggingface.co/blog/security-incident-july-2026) that someone had gotten into a slice of their production infrastructure. Nothing outlandish there, on the face of it — companies get attacked, some are breached, a select few disclose, the internet shrugs and moves on to the next thing. What made this one worth a second look wasn't the access, but rather the actor.
 
 The actor might have had the overal charisma of your average script kiddie, but that's more or less where similarities end.
